@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -6,7 +7,41 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
-	<H1>Teste</H1>
+	<div class="container">
+        <div id="listaDeConvidados">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Nome</th>
+                    </tr>
+                </thead>
+                <tr th:each="guest : ${guests}">
+					<td><span th:text="${guest.name}"></span></td>
+					<td><span th:text="${guest.email}"></span></td>
+					<td><span th:text="${guest.telephone}"></span></td>
+				</tr>
+            </table>
+        </div>
+
+	<hr/>
+	
+	<form action="save" method="post">
+	    <div class="form-group">
+	        <label for="name">Nome</label>
+	        <input type="text" class="form-control" id="name" name="name" placeholder="Nome" />
+	    </div>
+	    <div class="form-group">
+	        <label for="email">E-mail</label>
+	        <input type="email" class="form-control" id="email" name="email" placeholder="Email" />
+	    </div>
+	    <div class="form-group">
+	        <label for="telephone">Telefone</label>
+	        <input type="text" class="form-control" id="telephone" name="telephone" placeholder="Telefone" />
+	    </div>
+	    <button type="submit" class="btn btn-success">Convidar</button>
+	</form>
 	
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

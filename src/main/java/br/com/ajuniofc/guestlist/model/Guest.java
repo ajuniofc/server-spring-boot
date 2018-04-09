@@ -13,6 +13,13 @@ public class Guest {
 	private String email;
 	private String telephone;
 	
+	public Guest() {}
+	
+	public Guest(String name, String email, String telephone) {
+		this.name = name;
+		this.email = email;
+		this.telephone = telephone;
+	}
 	public int getId() {
 		return id;
 	}
